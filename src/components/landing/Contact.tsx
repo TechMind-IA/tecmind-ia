@@ -15,6 +15,7 @@ export default function Contact() {
   const [form, setForm] = useState({
     name: '',
     email: '',
+    phone: '',
     service: '',
     message: '',
   })
@@ -76,6 +77,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white/3 border border-white/8 rounded-3xl p-8 md:p-12"
           >
+            {/* Nome */}
             <div className="flex flex-col gap-2">
               <label className="text-white/50 text-xs font-semibold uppercase tracking-wider">
                 Nome
@@ -89,6 +91,7 @@ export default function Contact() {
               />
             </div>
 
+            {/* E-mail */}
             <div className="flex flex-col gap-2">
               <label className="text-white/50 text-xs font-semibold uppercase tracking-wider">
                 E-mail
@@ -103,7 +106,23 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex flex-col gap-2 md:col-span-2">
+            {/* Telefone */}
+            <div className="flex flex-col gap-2">
+              <label className="text-white/50 text-xs font-semibold uppercase tracking-wider">
+                Telefone{' '}
+                <span className="normal-case text-white/25 font-normal">(opcional)</span>
+              </label>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                placeholder="(00) 00000-0000"
+                className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 text-sm focus:outline-none focus:border-violet-500/50 transition-colors"
+              />
+            </div>
+
+            {/* Serviço */}
+            <div className="flex flex-col gap-2">
               <label className="text-white/50 text-xs font-semibold uppercase tracking-wider">
                 Serviço de interesse
               </label>
@@ -121,6 +140,7 @@ export default function Contact() {
               </select>
             </div>
 
+            {/* Mensagem */}
             <div className="flex flex-col gap-2 md:col-span-2">
               <label className="text-white/50 text-xs font-semibold uppercase tracking-wider">
                 Mensagem
@@ -129,9 +149,7 @@ export default function Contact() {
                 required
                 rows={5}
                 value={form.message}
-                onChange={(e) =>
-                  setForm({ ...form, message: e.target.value })
-                }
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder="Descreva seu projeto ou necessidade..."
                 className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 text-sm focus:outline-none focus:border-violet-500/50 transition-colors resize-none"
               />

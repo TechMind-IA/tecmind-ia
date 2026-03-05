@@ -66,7 +66,7 @@ export default function Portfolio() {
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Projetos que{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
               falam por si
             </span>
           </h2>
@@ -79,7 +79,7 @@ export default function Portfolio() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/[0.03] hover:border-white/15 transition-all duration-500 cursor-default"
+              className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 hover:border-white/15 transition-all duration-500 cursor-default"
             >
               <div className="relative overflow-hidden h-48">
                 {/* <Image
@@ -88,7 +88,7 @@ export default function Portfolio() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-50 group-hover:brightness-60"
                 /> */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0f] via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
                   <span
                     className={`px-3 py-1 rounded-full border text-xs font-semibold ${
