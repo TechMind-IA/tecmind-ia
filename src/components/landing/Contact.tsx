@@ -24,9 +24,24 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1200))
-    setLoading(false)
-    setSent(true)
+
+    try {
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      if (res.ok) {
+        setSent(true)
+      } else {
+        alert('Erro ao enviar. Tente novamente.')
+      }
+    } catch {
+      alert('Erro ao enviar. Tente novamente.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -37,7 +52,7 @@ export default function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Vamos{' '}
-            <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               construir juntos
             </span>
           </h2>
@@ -59,7 +74,7 @@ export default function Contact() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white/[0.03] border border-white/[0.08] rounded-3xl p-8 md:p-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white/3 border border-white/8 rounded-3xl p-8 md:p-12"
           >
             <div className="flex flex-col gap-2">
               <label className="text-white/50 text-xs font-semibold uppercase tracking-wider">
@@ -126,7 +141,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-10 py-4 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-sm hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed min-w-[200px]"
+                className="px-10 py-4 rounded-full bg-linear-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-sm hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed min-w-50"
               >
                 {loading ? 'Enviando...' : 'Enviar mensagem'}
               </button>
