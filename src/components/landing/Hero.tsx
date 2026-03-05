@@ -69,10 +69,6 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-32 pb-24">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-xs font-semibold uppercase tracking-widest mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-          Tecnologia que transforma negócios
-        </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.05] tracking-tight max-w-5xl mb-6">
           Soluções digitais que{' '}
@@ -82,10 +78,12 @@ export default function Hero() {
           o seu negócio
         </h1>
 
-        <p className="text-white/50 text-lg md:text-xl max-w-2xl leading-relaxed mb-12">
-          Sites, workflows inteligentes e automações com IA. Somos a TecMind AI
-          — construímos a presença digital e a infraestrutura tecnológica que a
-          sua empresa precisa.
+        <p className="text-white/50 text-lg max-w-2xl leading-relaxed mb-0">
+          Sites, workflows inteligentes e automações com IA.
+        </p>
+
+        <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-12">
+          Somos a TecMind AI construímos a presença digital e a infraestrutura tecnológica que a sua empresa precisa!
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -97,7 +95,7 @@ export default function Hero() {
             }
             className="px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-base hover:shadow-2xl hover:shadow-violet-500/40 transition-all duration-300 hover:scale-105"
           >
-            Começar agora
+            Fale Conosco
           </button>
           <button
             onClick={() =>
@@ -109,22 +107,6 @@ export default function Hero() {
           >
             Ver serviços →
           </button>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-3 gap-8 md:gap-16 border-t border-white/5 pt-12">
-          {[
-            { value: '100+', label: 'Projetos entregues' },
-            { value: '98%', label: 'Clientes satisfeitos' },
-            { value: '24/7', label: 'Suporte disponível' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-black text-white mb-1">
-                {stat.value}
-              </div>
-              <div className="text-white/40 text-xs md:text-sm">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

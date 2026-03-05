@@ -37,9 +37,6 @@ export default function WhyUs() {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Left */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/50 text-xs font-semibold uppercase tracking-widest mb-8">
-              Por que nós
-            </div>
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
               Tecnologia com{' '}
               <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
@@ -47,9 +44,7 @@ export default function WhyUs() {
               </span>
             </h2>
             <p className="text-white/40 text-lg leading-relaxed">
-              A TecMind AI nasceu para ser o parceiro tecnológico das empresas
-              que querem crescer de verdade. Não somos apenas uma agência —
-              somos um time que se importa com o seu resultado.
+              A TecMind AI nasceu para ser o parceiro tecnológico das empresas que querem crescer de verdade. Não somos apenas uma agência. Somos um time que se importa com o seu resultado!
             </p>
 
             <div className="mt-10 flex items-center gap-6">

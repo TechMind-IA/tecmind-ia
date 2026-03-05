@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 export default function Footer() {
   const scrollTo = (id: string) => {
@@ -12,8 +13,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center">
-                <span className="text-white font-black text-sm">T</span>
+              <div className="w-20 h-13 rounded-lg overflow-hidden">
+                <Image src="/logo_tecmind.png" alt="Logo" width={120} height={120} className="object-cover" />
               </div>
               <span className="text-white font-bold text-lg tracking-tight">
                 TecMind <span className="text-violet-400">AI</span>
@@ -56,9 +57,8 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               {[
-                { label: 'Por que nós', id: 'whyus' },
+                { label: 'Nossos diferenciais', id: 'whyus' },
                 { label: 'Portfólio', id: 'portfolio' },
-                { label: 'Contato', id: 'contact' },
               ].map((item) => (
                 <li key={item.label}>
                   <button
@@ -76,9 +76,6 @@ export default function Footer() {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-xs">
             © 2026 TecMind AI. Todos os direitos reservados.
-          </p>
-          <p className="text-white/20 text-xs">
-            Feito com 💜 para transformar negócios
           </p>
         </div>
       </div>

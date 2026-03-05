@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -12,7 +13,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const links = ['Serviços', 'Por que nós', 'Portfólio', 'Contato']
+  const links = ['Serviços', 'Nossos diferenciais', 'Portfólio']
 
   const scrollTo = (section: string) => {
     const id = section
@@ -24,7 +25,6 @@ export default function Navbar() {
       servicos: 'services',
       'por-que-nos': 'whyus',
       portfolio: 'portfolio',
-      contato: 'contact',
     }
     const el = document.getElementById(map[id] || id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
@@ -41,8 +41,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center">
-            <span className="text-white font-black text-sm">T</span>
+          <div className="w-20 h-13 rounded-lg overflow-hidden">
+            <Image src="/logo_tecmind.png" alt="Logo" width={120} height={120} className="object-cover" />
           </div>
           <span className="text-white font-bold text-lg tracking-tight">
             TecMind <span className="text-violet-400">AI</span>

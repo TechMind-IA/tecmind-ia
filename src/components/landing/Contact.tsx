@@ -8,7 +8,6 @@ const serviceOptions = [
   'Solução com IA',
   'E-commerce',
   'Dashboard / Sistema',
-  'Consultoria Tech',
   'Outro',
 ]
 
@@ -36,18 +35,14 @@ export default function Contact() {
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/50 text-xs font-semibold uppercase tracking-widest mb-6">
-            Contato
-          </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Vamos{' '}
             <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               construir juntos
             </span>
           </h2>
-          <p className="text-white/40 text-lg max-w-lg mx-auto">
-            Conte-nos sobre o seu projeto e nossa equipe entrará em contato em
-            até 24 horas.
+          <p className="text-white/40 text-lg mx-auto">
+            Conte-nos sobre o seu projeto e nossa equipe entrará em contato.
           </p>
         </div>
 

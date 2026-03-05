@@ -64,18 +64,14 @@ export default function Portfolio() {
     <section id="portfolio" className="py-32 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/50 text-xs font-semibold uppercase tracking-widest mb-6">
-            Portfólio
-          </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Projetos que{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
               falam por si
             </span>
           </h2>
-          <p className="text-white/40 text-lg max-w-xl mx-auto">
-            Cada projeto é único. Cada cliente tem uma história. Aqui estão
-            alguns dos resultados que já entregamos.
+          <p className="text-white/40 text-lg mx-auto">
+            Cada projeto é único. Cada cliente tem uma história. Aqui estão alguns dos resultados que já entregamos.
           </p>
         </div>
 
