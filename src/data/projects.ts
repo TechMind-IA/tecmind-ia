@@ -64,130 +64,91 @@ export const projects: Project[] = [
         'Desenvolvemos uma plataforma extremamente simples de usar onde os convidados apenas escaneiam um QR Code e fazem upload das fotos diretamente do celular. As imagens são enviadas para um armazenamento em nuvem e exibidas em uma galeria colaborativa acessível em tempo real.'
   },
   {
-    slug: 'automacao-de-vendas',
-    title: 'Automação de Vendas',
-    category: 'Workflow',
-    shortDescription:
-      'Fluxo automatizado de CRM, follow-up por WhatsApp e emissão de notas fiscais.',
-    fullDescription:
-      'Criamos um ecossistema de automação completo para uma empresa de médio porte que realizava todo o processo comercial manualmente. O sistema integra CRM, disparos automáticos de WhatsApp em momentos estratégicos do funil, geração de propostas e emissão automática de notas fiscais após confirmação de pagamento.',
-    images: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
-      'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1200&q=80',
-      'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
+    "slug": "corrida-app",
+    "title": "corrida-app – Plataforma de Gestão de Eventos Esportivos",
+    "category": "Full Stack",
+    "shortDescription": "Aplicação web para criação, inscrição e pagamento em corridas de rua, com dashboard para organizadores e integração com MercadoPago.",
+    "fullDescription": "corrida-app é uma plataforma completa para o ecossistema de corridas de rua. De um lado, organizadores podem cadastrar eventos, definir categorias, preços e gerenciar inscrições em um painel administrativo. Do outro, corredores encontram as provas, realizam sua inscrição e efetuam o pagamento de forma simples e segura via MercadoPago. Após a realização do evento, os resultados podem ser publicados e visualizados em rankings interativos. A aplicação foi construída com foco em escalabilidade, performance e experiência do usuário, utilizando as mais modernas ferramentas do ecossistema Next.js.",
+    "images": [],
+    "tags": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "MercadoPago", "NextAuth", "React Query"],
+    "technologies": [
+        {
+        "name": "Next.js 15 (App Router)",
+        "description": "Framework React com renderização híbrida (SSR/SSG) e API Routes integradas, proporcionando performance e SEO."
+        },
+        {
+        "name": "TypeScript",
+        "description": "Tipagem estática para maior robustez e manutenibilidade do código."
+        },
+        {
+        "name": "Prisma + Neon",
+        "description": "ORM moderno com suporte a PostgreSQL serverless, garantindo consultas seguras e escaláveis."
+        },
+        {
+        "name": "Tailwind CSS + shadcn/ui",
+        "description": "Estilização utilitária combinada com componentes acessíveis e customizáveis, acelerando o desenvolvimento da interface."
+        },
+        {
+        "name": "NextAuth.js (Auth.js)",
+        "description": "Sistema de autenticação flexível com suporte a múltiplos provedores e persistência em banco de dados."
+        },
+        {
+        "name": "MercadoPago SDK",
+        "description": "Integração direta com a plataforma de pagamentos líder na América Latina, permitindo recebimento via cartão, boleto e Pix."
+        },
+        {
+        "name": "TanStack React Query",
+        "description": "Gerenciamento de estado assíncrono e cache de dados, otimizando as chamadas à API."
+        },
+        {
+        "name": "React Hook Form + Zod",
+        "description": "Criação de formulários performáticos com validação tipada e integração perfeita com TypeScript."
+        },
+        {
+        "name": "Recharts",
+        "description": "Biblioteca de gráficos para exibição de estatísticas e resultados de forma visual e intuitiva."
+        }
     ],
-    tags: ['n8n', 'WhatsApp API', 'IA'],
-    technologies: [
-      { name: 'n8n', description: 'Orquestração dos fluxos de automação' },
-      { name: 'WhatsApp Business API', description: 'Comunicação automatizada com leads' },
-      { name: 'OpenAI GPT-4', description: 'Personalização inteligente das mensagens' },
-      { name: 'Webhooks', description: 'Integração em tempo real entre sistemas' },
-    ],
-    challenge:
-      'A equipe comercial gastava 4 horas diárias em tarefas repetitivas: follow-up manual, envio de propostas e emissão de notas, deixando pouco tempo para vendas estratégicas.',
-    solution:
-      'Automatizamos 100% do processo repetitivo. O vendedor agora só entra em ação nos momentos de decisão. O tempo de resposta para novos leads caiu de horas para menos de 2 minutos.',
+    "challenge": "Criar uma plataforma que unifique a experiência de organizadores e participantes de corridas de rua, resolvendo desde a criação do evento até o processamento de pagamentos e a divulgação de resultados, tudo isso com alta disponibilidade e segurança.",
+    "solution": "Optou‑se por uma arquitetura serverless com Next.js, que elimina a necessidade de gerenciar servidores e escala automaticamente. O uso de Prisma com Neon permite um banco de dados relacional com custo reduzido e ótima performance. A escolha do MercadoPago atende ao público latino‑americano, oferecendo meios de pagamento locais. O design system com shadcn/ui garante uma interface consistente e acessível, enquanto React Query e React Hook Form mantêm a fluidez na interação do usuário."
   },
   {
-    slug: 'ecommerce-de-moda',
-    title: 'E-commerce de Moda',
-    category: 'E-commerce',
-    shortDescription:
-      'Loja virtual completa com catálogo inteligente, pagamentos e logística integrada.',
-    fullDescription:
-      'Desenvolvemos uma loja virtual completa para uma marca de moda feminina que migrava do varejo físico para o digital. O projeto incluiu configuração da plataforma, integração com meios de pagamento, sistema de gestão de estoque em tempo real, configuração de logística com múltiplas transportadoras e implementação de pixel para campanhas de mídia paga.',
-    images: [
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&q=80',
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80',
-    ],
-    tags: ['WooCommerce', 'Pixel', 'SEO'],
-    technologies: [
-      { name: 'WooCommerce', description: 'Plataforma de e-commerce customizável' },
-      { name: 'Meta Pixel', description: 'Rastreamento e otimização de campanhas' },
-      { name: 'Melhor Envio API', description: 'Cotação e logística automatizada' },
-      { name: 'SEO On-page', description: 'Otimização para busca orgânica' },
-    ],
-    challenge:
-      'A marca tinha forte presença no Instagram mas zero estrutura para converter esse público em vendas online de forma escalável.',
-    solution:
-      'Criamos uma loja otimizada para conversão mobile-first, integrada ao Instagram Shopping e com checkout simplificado. O Pixel configurado corretamente permitiu campanhas de remarketing precisas.',
-  },
-  {
-    slug: 'dashboard-analitico',
-    title: 'Dashboard Analítico',
-    category: 'Sistema',
-    shortDescription:
-      'Painel em tempo real para monitorar KPIs, vendas e performance de campanhas digitais.',
-    fullDescription:
-      'Desenvolvemos um dashboard executivo centralizado para uma rede de franquias que precisava consolidar dados de múltiplas fontes: ERP, Google Ads, Meta Ads, e-commerce e CRM. O painel exibe KPIs em tempo real com alertas automáticos quando métricas saem do intervalo esperado.',
-    images: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
-      'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
-    ],
-    tags: ['React', 'API REST', 'Charts'],
-    technologies: [
-      { name: 'React + TypeScript', description: 'Frontend tipado e escalável' },
-      { name: 'Recharts', description: 'Visualizações de dados interativas' },
-      { name: 'Node.js', description: 'Backend para agregação de dados' },
-      { name: 'PostgreSQL', description: 'Armazenamento histórico de métricas' },
-    ],
-    challenge:
-      'Os gestores tomavam decisões com base em dados de ontem — ou de semana passada. Relatórios manuais consumiam 6 horas semanais do time de marketing.',
-    solution:
-      'Um único painel que conecta todas as fontes e atualiza em tempo real. Alertas automáticos por WhatsApp quando ROAS cai abaixo do threshold ou estoque crítico é detectado.',
-  },
-  {
-    slug: 'chatbot-com-ia',
-    title: 'Chatbot com IA',
-    category: 'IA',
-    shortDescription:
-      'Assistente virtual treinado com dados da empresa para atendimento automático 24/7.',
-    fullDescription:
-      'Desenvolvemos um assistente de IA treinado com toda a base de conhecimento de uma clínica médica: procedimentos, preços, convênios, protocolos e FAQs. O chatbot responde dúvidas, agenda consultas, envia lembretes e escala para humanos apenas quando necessário.',
-    images: [
-      'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80',
-      'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=1200&q=80',
-      'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80',
-    ],
-    tags: ['GPT-4', 'WhatsApp', 'Treinamento'],
-    technologies: [
-      { name: 'GPT-4 Turbo', description: 'Modelo de linguagem para respostas naturais' },
-      { name: 'RAG (Retrieval-Augmented Generation)', description: 'Base de conhecimento personalizada' },
-      { name: 'WhatsApp Business API', description: 'Canal principal de atendimento' },
-      { name: 'n8n', description: 'Orquestração e integração com agenda' },
-    ],
-    challenge:
-      'A recepção da clínica recebia mais de 200 mensagens diárias no WhatsApp, 60% delas perguntas repetitivas sobre preços e convênios. A equipe estava sobrecarregada e o tempo de resposta ultrapassava 3 horas.',
-    solution:
-      'O chatbot resolve 80% das dúvidas instantaneamente, 24 horas por dia. A equipe humana passou a focar apenas em casos complexos e agendamentos que exigem julgamento clínico.',
-  },
-  {
-    slug: 'site-institucional',
-    title: 'Site Institucional',
-    category: 'Site',
-    shortDescription:
-      'Presença digital completa para escritório de advocacia com SEO local e blog.',
-    fullDescription:
-      'Criamos a presença digital completa de um escritório de advocacia especializado em direito trabalhista. O projeto incluiu identidade visual digital, site institucional com blog jurídico, otimização para SEO local em três cidades e integração com Google Meu Negócio.',
-    images: [
-      'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80',
-      'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80',
-    ],
-    tags: ['WordPress', 'SEO', 'Blog'],
-    technologies: [
-      { name: 'WordPress', description: 'CMS para gestão autônoma do conteúdo' },
-      { name: 'Yoast SEO', description: 'Otimização técnica e on-page' },
-      { name: 'Schema Markup', description: 'Dados estruturados para rich snippets' },
-      { name: 'Google Search Console', description: 'Monitoramento de performance orgânica' },
-    ],
-    challenge:
-      'O escritório dependia exclusivamente de indicações. Não aparecia nos resultados do Google quando potenciais clientes pesquisavam por advogados trabalhistas na região.',
-    solution:
-      'Em 4 meses de SEO local, o escritório passou a aparecer na primeira página para 12 termos estratégicos. O blog jurídico trouxe autoridade e gerou consultas orgânicas recorrentes.',
-  },
+  "slug": "mecmind",
+  "title": "Mecmind – Plataforma de Análise Inteligente de Desenhos Técnicos",
+  "category": "Full Stack",
+  "shortDescription": "Sistema web que utiliza IA para interpretar desenhos de peças mecânicas, gerar planos de fabricação e integrar com estoque e perfil da empresa.",
+  "fullDescription": "Mecmind é uma aplicação desenvolvida em Django que automatiza a análise de desenhos técnicos para empresas de usinagem. O usuário envia uma imagem do desenho (eixo, chapa, tubo ou conjunto) e o sistema, por meio da API da OpenAI, extrai automaticamente todas as características dimensionais e geométricas. Em uma segunda etapa, essas informações são cruzadas com o perfil da empresa – máquinas disponíveis, processos internos/externos, turnos de trabalho e itens em estoque – para gerar um plano de fabricação completo, incluindo sugestão de matéria-prima, sequência de operações e recomendação de itens do estoque. O sistema também oferece gestão de usuários, controle de limites mensais de análise e um painel administrativo para configuração dos prompts da IA. O resultado é uma ferramenta que reduz drasticamente o tempo de orçamentação e aumenta a precisão no planejamento da produção.",
+  "images": [],
+  "tags": ["Django", "Python", "OpenAI", "PostgreSQL", "Pydantic", "IA", "Indústria 4.0"],
+  "technologies": [
+    {
+      "name": "Django 5.2",
+      "description": "Framework web robusto e seguro, utilizado para toda a lógica de negócio, autenticação, ORM e templates."
+    },
+    {
+      "name": "PostgreSQL",
+      "description": "Banco de dados relacional que armazena empresas, usuários, projetos, estoque e registros de uso."
+    },
+    {
+      "name": "OpenAI API (GPT-4 com Visão)",
+      "description": "Integração com os modelos de linguagem e visão da OpenAI para extração estruturada de informações de desenhos técnicos e geração de planos de fabricação contextuais."
+    },
+    {
+      "name": "Pydantic",
+      "description": "Biblioteca de validação de dados que define schemas rígidos para as respostas da IA, garantindo consistência e tipagem."
+    },
+    {
+      "name": "Python",
+      "description": "Linguagem principal do backend, escolhida pela vasta gama de bibliotecas científicas e facilidade de integração com IA."
+    },
+    {
+      "name": "Django Admin",
+      "description": "Interface administrativa poderosa para gerenciar usuários, empresas, prompts de IA e mensagens do sistema."
+    }
+  ],
+  "challenge": "Empresas de usinagem gastam horas interpretando manualmente desenhos técnicos e planejando a fabricação, o que é suscetível a erros e atrasos. Além disso, cada empresa possui um parque de máquinas e um estoque únicos, tornando as recomendações genéricas pouco úteis. Era necessário um sistema que combinasse visão computacional com o contexto real da empresa para gerar análises personalizadas e precisas.",
+  "solution": "Desenvolveu-se uma plataforma Django que orquestra chamadas à OpenAI em duas etapas: primeiro, extrai as características do desenho usando modelos com visão; depois, alimenta um segundo modelo com o perfil da empresa (máquinas, processos, estoque) para gerar um plano de fabricação sob medida. O sistema também implementa um controle de estoque integrado e um limite mensal de análises, garantindo escalabilidade e aderência às necessidades de cada cliente. O uso de schemas Pydantic assegura que os dados extraídos sejam sempre estruturados e válidos."
+  }
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {
