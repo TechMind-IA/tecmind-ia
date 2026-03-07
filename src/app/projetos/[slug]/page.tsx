@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { useParams, notFound } from 'next/navigation'
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { getProjectBySlug, projects } from '@/data/projects'
 
@@ -117,8 +117,11 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
   )
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug)
+export default function ProjectPage() {
+  const params = useParams() // 👈 obtém os parâmetros da rota
+  const slug = params.slug as string
+  const project = getProjectBySlug(slug)
+
   if (!project) notFound()
 
   // Related projects (same category or just others)
