@@ -22,11 +22,7 @@ export const projects: Project[] = [
     fullDescription:
         'Wedding Memories é uma aplicação web desenvolvida para resolver um problema comum em eventos: centenas de fotos registradas pelos convidados acabam dispersas em celulares e redes sociais e raramente chegam aos noivos. A plataforma permite que convidados escaneiem um QR Code presente no evento e enviem fotos diretamente para uma galeria centralizada acessível por todos. A aplicação foi construída com arquitetura moderna utilizando Next.js e React, com upload de imagens para cloud storage e banco de dados serverless. O foco do projeto foi criar uma experiência extremamente simples para o usuário final, permitindo uploads rápidos diretamente do celular e visualização otimizada das imagens.',
 
-    images: [
-        'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80',
-        'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80',
-        'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1200&q=80',
-    ],
+    images: ['/wedding1.png', '/wedding3.png', '/wedding4.png', '/wedding2.png'],
 
     tags: ['Next.js', 'React', 'TypeScript', 'AWS S3', 'Serverless'],
 

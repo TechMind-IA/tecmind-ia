@@ -24,16 +24,13 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
   return (
     <>
       {/* Main image */}
-      <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] group">
+      <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] group flex items-center justify-center bg-black/20 min-h-[300px]">
         <img
           src={images[active]}
           alt={`${title} - imagem ${active + 1}`}
-          className="w-full h-[420px] object-cover cursor-zoom-in"
+          className="w-full h-full object-contain max-h-[70vh] cursor-zoom-in"
           onClick={() => setLightbox(true)}
         />
-
-        {/* Gradient overlay bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
         {/* Navigation arrows */}
         {images.length > 1 && (
@@ -66,7 +63,7 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`relative flex-1 h-20 rounded-xl overflow-hidden border-2 transition-all duration-200 ${
+              className={`relative flex-1 aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200 ${
                 i === active ? 'border-violet-500' : 'border-white/10 hover:border-white/30'
               }`}
             >
@@ -77,7 +74,7 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
         </div>
       )}
 
-      {/* Lightbox */}
+      {/* Lightbox (mantido igual) */}
       {lightbox && (
         <div
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
@@ -118,7 +115,7 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
 }
 
 export default function ProjectPage() {
-  const params = useParams() // 👈 obtém os parâmetros da rota
+  const params = useParams()
   const slug = params.slug as string
   const project = getProjectBySlug(slug)
 
