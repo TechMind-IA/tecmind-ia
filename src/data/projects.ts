@@ -61,20 +61,16 @@ export const projects: Project[] = [
   },
   {
     "slug": "corrida-app",
-    "title": "corrida-app – Plataforma de Gestão de Eventos Esportivos",
+    "title": "Plataforma de Gestão de Eventos Esportivos",
     "category": "Full Stack",
     "shortDescription": "Aplicação web para criação, inscrição e pagamento em corridas de rua, com dashboard para organizadores e integração com MercadoPago.",
-    "fullDescription": "corrida-app é uma plataforma completa para o ecossistema de corridas de rua. De um lado, organizadores podem cadastrar eventos, definir categorias, preços e gerenciar inscrições em um painel administrativo. Do outro, corredores encontram as provas, realizam sua inscrição e efetuam o pagamento de forma simples e segura via MercadoPago. Após a realização do evento, os resultados podem ser publicados e visualizados em rankings interativos. A aplicação foi construída com foco em escalabilidade, performance e experiência do usuário, utilizando as mais modernas ferramentas do ecossistema Next.js.",
-    "images": [],
+    "fullDescription": "Plataforma completa para o ecossistema de corridas de rua. De um lado, organizadores podem cadastrar eventos, definir categorias, preços e gerenciar inscrições em um painel administrativo. Do outro, corredores encontram as provas, realizam sua inscrição e efetuam o pagamento de forma simples e segura via MercadoPago. Após a realização do evento, os resultados podem ser publicados e visualizados em rankings interativos. A aplicação foi construída com foco em escalabilidade, performance e experiência do usuário, utilizando as mais modernas ferramentas do ecossistema Next.js.",
+    images: ['/corrida12.jpeg', '/corrida1.png', '/corrida2.png', '/corrida3.png', '/corrida4.png', '/corrida5.png', '/corrida6.png', '/corrida7.png', '/corrida8.png', '/corrida9.png', '/corrida10.png', '/corrida11.png', '/corrida13.png'],
     "tags": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "MercadoPago", "NextAuth", "React Query"],
     "technologies": [
         {
         "name": "Next.js 15 (App Router)",
         "description": "Framework React com renderização híbrida (SSR/SSG) e API Routes integradas, proporcionando performance e SEO."
-        },
-        {
-        "name": "TypeScript",
-        "description": "Tipagem estática para maior robustez e manutenibilidade do código."
         },
         {
         "name": "Prisma + Neon",
@@ -91,10 +87,6 @@ export const projects: Project[] = [
         {
         "name": "MercadoPago SDK",
         "description": "Integração direta com a plataforma de pagamentos líder na América Latina, permitindo recebimento via cartão, boleto e Pix."
-        },
-        {
-        "name": "TanStack React Query",
-        "description": "Gerenciamento de estado assíncrono e cache de dados, otimizando as chamadas à API."
         },
         {
         "name": "React Hook Form + Zod",
@@ -137,10 +129,6 @@ export const projects: Project[] = [
       "name": "Python",
       "description": "Linguagem principal do backend, escolhida pela vasta gama de bibliotecas científicas e facilidade de integração com IA."
     },
-    {
-      "name": "Django Admin",
-      "description": "Interface administrativa poderosa para gerenciar usuários, empresas, prompts de IA e mensagens do sistema."
-    }
   ],
   "challenge": "Empresas de usinagem gastam horas interpretando manualmente desenhos técnicos e planejando a fabricação, o que é suscetível a erros e atrasos. Além disso, cada empresa possui um parque de máquinas e um estoque únicos, tornando as recomendações genéricas pouco úteis. Era necessário um sistema que combinasse visão computacional com o contexto real da empresa para gerar análises personalizadas e precisas.",
   "solution": "Desenvolveu-se uma plataforma Django que orquestra chamadas à OpenAI em duas etapas: primeiro, extrai as características do desenho usando modelos com visão; depois, alimenta um segundo modelo com o perfil da empresa (máquinas, processos, estoque) para gerar um plano de fabricação sob medida. O sistema também implementa um controle de estoque integrado e um limite mensal de análises, garantindo escalabilidade e aderência às necessidades de cada cliente. O uso de schemas Pydantic assegura que os dados extraídos sejam sempre estruturados e válidos."
