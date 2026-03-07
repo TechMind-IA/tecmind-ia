@@ -24,7 +24,9 @@ export default function Navbar() {
     const map: Record<string, string> = {
       servicos: 'services',
       'por-que-nos': 'whyus',
+      'nossos-diferenciais': 'whyus',  // fix: chave correta para "Nossos diferenciais"
       portfolio: 'portfolio',
+      contato: 'contact',              // fix: mapeia "Contato" para id="contact"
     }
     const el = document.getElementById(map[id] || id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
@@ -45,7 +47,7 @@ export default function Navbar() {
             <Image src="/logo_tecmind.png" alt="Logo" width={120} height={120} className="object-cover" />
           </div>
           <span className="text-white font-bold text-lg tracking-tight">
-            TecMind <span className="text-violet-400">AI</span>
+            TechMind <span className="text-violet-400">AI</span>
           </span>
         </div>
 

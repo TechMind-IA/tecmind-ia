@@ -5,6 +5,8 @@ import WhyUs from '@/components/landing/WhyUs'
 import Portfolio from '@/components/landing/Portfolio'
 import Contact from '@/components/landing/Contact'
 import Footer from '@/components/landing/Footer'
+import WhatsAppButton from '@/components/landing/WhatsAppButton'
+import ScrollToTop from '@/components/landing/ScrollTotop'
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Portfolio />
       <Contact />
       <Footer />
+      <WhatsAppButton />
+      <ScrollToTop />
     </main>
   )
 }

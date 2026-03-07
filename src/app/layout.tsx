@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'TecMind AI',
-  description: 'TecMind AI — Sites, automações e inteligência artificial para o seu negócio crescer.',
+  title: 'TechMind AI',
+  description: 'TechMind AI — Sites, automações e inteligência artificial para o seu negócio crescer.',
 }
 
 export default function RootLayout({

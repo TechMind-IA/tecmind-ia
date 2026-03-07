@@ -17,7 +17,7 @@ export default function Footer() {
                 <Image src="/logo_tecmind.png" alt="Logo" width={120} height={120} className="object-cover" />
               </div>
               <span className="text-white font-bold text-lg tracking-tight">
-                TecMind <span className="text-violet-400">AI</span>
+                TechMind <span className="text-violet-400">AI</span>
               </span>
             </div>
             <p className="text-white/35 text-sm leading-relaxed max-w-xs">
@@ -75,7 +75,7 @@ export default function Footer() {
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-xs">
-            © 2026 TecMind AI. Todos os direitos reservados.
+            © 2026 TechMind AI. Todos os direitos reservados.
           </p>
         </div>
       </div>
