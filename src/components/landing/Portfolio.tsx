@@ -1,55 +1,6 @@
-import Image from 'next/image'
-
-const projects = [
-  {
-    title: 'Landing Page SaaS',
-    category: 'Site',
-    description:
-      'Landing page de alta conversão para startup de software com design premium e animações.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
-    tags: ['React', 'Tailwind', 'Framer Motion'],
-  },
-  {
-    title: 'Automação de Vendas',
-    category: 'Workflow',
-    description:
-      'Fluxo automatizado de CRM, follow-up por WhatsApp e emissão de notas fiscais.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-    tags: ['n8n', 'WhatsApp API', 'IA'],
-  },
-  {
-    title: 'E-commerce de Moda',
-    category: 'E-commerce',
-    description:
-      'Loja virtual completa com catálogo inteligente, pagamentos e logística integrada.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80',
-    tags: ['WooCommerce', 'Pixel', 'SEO'],
-  },
-  {
-    title: 'Dashboard Analítico',
-    category: 'Sistema',
-    description:
-      'Painel em tempo real para monitorar KPIs, vendas e performance de campanhas digitais.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-    tags: ['React', 'API REST', 'Charts'],
-  },
-  {
-    title: 'Chatbot com IA',
-    category: 'IA',
-    description:
-      'Assistente virtual treinado com dados da empresa para atendimento automático 24/7.',
-    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80',
-    tags: ['GPT-4', 'WhatsApp', 'Treinamento'],
-  },
-  {
-    title: 'Site Institucional',
-    category: 'Site',
-    description:
-      'Presença digital completa para escritório de advocacia com SEO local e blog.',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80',
-    tags: ['WordPress', 'SEO', 'Blog'],
-  },
-]
+import Link from 'next/link'
+import { projects } from '@/data/projects'
+import { ArrowUpRight } from 'lucide-react'
 
 const categoryColors: Record<string, string> = {
   Site: 'text-violet-300 bg-violet-500/10 border-violet-500/20',
@@ -57,6 +8,14 @@ const categoryColors: Record<string, string> = {
   'E-commerce': 'text-emerald-300 bg-emerald-500/10 border-emerald-500/20',
   Sistema: 'text-orange-300 bg-orange-500/10 border-orange-500/20',
   IA: 'text-fuchsia-300 bg-fuchsia-500/10 border-fuchsia-500/20',
+}
+
+const categoryGradients: Record<string, string> = {
+  Site: 'from-violet-500/10',
+  Workflow: 'from-cyan-500/10',
+  'E-commerce': 'from-emerald-500/10',
+  Sistema: 'from-orange-500/10',
+  IA: 'from-fuchsia-500/10',
 }
 
 export default function Portfolio() {
@@ -77,34 +36,42 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <div
-              key={project.title}
-              className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 hover:border-white/15 transition-all duration-500 cursor-default"
+            <Link
+              key={project.slug}
+              href={`/projetos/${project.slug}`}
+              className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/[0.03] hover:border-white/15 hover:bg-white/[0.06] transition-all duration-500 cursor-pointer flex flex-col"
             >
-              <div className="relative overflow-hidden h-48">
-                {/* <Image
-                  src={project.image}
+              {/* Image area */}
+              <div className="relative overflow-hidden h-52">
+                <img
+                  src={project.images[0]}
                   alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-50 group-hover:brightness-60"
-                /> */}
-                <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0f] via-transparent to-transparent" />
+                  className="w-full h-full object-cover brightness-50 group-hover:brightness-60 group-hover:scale-105 transition-all duration-700"
+                />
+                {/* Gradient overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-t ${categoryGradients[project.category] ?? 'from-violet-500/10'} to-transparent opacity-60`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/20 to-transparent" />
+
+                {/* Category badge */}
                 <div className="absolute top-4 left-4">
-                  <span
-                    className={`px-3 py-1 rounded-full border text-xs font-semibold ${
-                      categoryColors[project.category]
-                    }`}
-                  >
+                  <span className={`px-3 py-1 rounded-full border text-xs font-semibold ${categoryColors[project.category]}`}>
                     {project.category}
                   </span>
                 </div>
+
+                {/* Arrow icon on hover */}
+                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                  <ArrowUpRight className="w-4 h-4 text-white" />
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-white font-bold text-lg mb-2">
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-white font-bold text-lg mb-2 group-hover:text-violet-300 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-white/40 text-sm leading-relaxed mb-4">
-                  {project.description}
+                <p className="text-white/40 text-sm leading-relaxed mb-4 flex-1">
+                  {project.shortDescription}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -117,7 +84,15 @@ export default function Portfolio() {
                   ))}
                 </div>
               </div>
-            </div>
+
+              {/* Bottom CTA bar */}
+              <div className="px-6 pb-5">
+                <div className="flex items-center gap-1 text-violet-400/60 group-hover:text-violet-400 text-xs font-semibold transition-colors duration-300">
+                  <span>Ver projeto completo</span>
+                  <ArrowUpRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
