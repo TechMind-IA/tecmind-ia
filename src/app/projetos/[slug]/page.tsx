@@ -1,7 +1,11 @@
+// Codex: assistente de programação responsável por colaborar na leitura,
+// edição e manutenção deste projeto com foco em clareza, segurança e qualidade.
+
 'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useParams, notFound } from 'next/navigation'
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { getProjectBySlug, projects } from '@/data/projects'
@@ -18,6 +22,14 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
   const [active, setActive] = useState(0)
   const [lightbox, setLightbox] = useState(false)
 
+  if (!images.length) {
+    return (
+      <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-violet-950/60 via-white/[0.03] to-cyan-950/40 min-h-[300px] flex items-center justify-center">
+        <span className="text-white/35 text-sm font-medium">Imagens em breve</span>
+      </div>
+    )
+  }
+
   const prev = () => setActive((a) => (a === 0 ? images.length - 1 : a - 1))
   const next = () => setActive((a) => (a === images.length - 1 ? 0 : a + 1))
 
@@ -25,9 +37,12 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
     <>
       {/* Main image */}
       <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] group flex items-center justify-center bg-black/20 min-h-[300px]">
-        <img
+        <Image
           src={images[active]}
           alt={`${title} - imagem ${active + 1}`}
+          width={1400}
+          height={900}
+          sizes="(min-width: 1024px) 896px, 100vw"
           className="w-full h-full object-contain max-h-[70vh] cursor-zoom-in"
           onClick={() => setLightbox(true)}
         />
@@ -67,7 +82,7 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
                 i === active ? 'border-violet-500' : 'border-white/10 hover:border-white/30'
               }`}
             >
-              <img src={img} alt={`thumb ${i + 1}`} className="w-full h-full object-cover" />
+              <Image src={img} alt={`thumb ${i + 1}`} fill sizes="120px" className="object-cover" />
               {i !== active && <div className="absolute inset-0 bg-black/40" />}
             </button>
           ))}
@@ -86,9 +101,12 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
           >
             <X className="w-5 h-5" />
           </button>
-          <img
+          <Image
             src={images[active]}
             alt={title}
+            width={1600}
+            height={1000}
+            sizes="100vw"
             className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
@@ -252,11 +270,19 @@ export default function ProjectPage() {
                     href={`/projetos/${p.slug}`}
                     className="group flex gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.05] transition-all duration-300"
                   >
-                    <img
-                      src={p.images[0]}
-                      alt={p.title}
-                      className="w-20 h-16 object-cover rounded-lg brightness-60 group-hover:brightness-75 transition-all duration-300 shrink-0"
-                    />
+                    <div className="relative w-20 h-16 rounded-lg overflow-hidden bg-white/5 shrink-0">
+                      {p.images[0] ? (
+                        <Image
+                          src={p.images[0]}
+                          alt={p.title}
+                          fill
+                          sizes="80px"
+                          className="object-cover brightness-60 group-hover:brightness-75 transition-all duration-300"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-violet-950/70 to-cyan-950/40" />
+                      )}
+                    </div>
                     <div className="flex flex-col justify-center gap-1 min-w-0">
                       <span className={`text-xs font-semibold w-fit px-2 py-0.5 rounded-full border ${categoryColors[p.category]}`}>
                         {p.category}

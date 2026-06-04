@@ -1,3 +1,6 @@
+// Codex: assistente de programação responsável por colaborar na leitura,
+// edição e manutenção deste projeto com foco em clareza, segurança e qualidade.
+
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";

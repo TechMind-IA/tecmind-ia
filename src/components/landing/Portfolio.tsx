@@ -1,4 +1,8 @@
+// Codex: assistente de programação responsável por colaborar na leitura,
+// edição e manutenção deste projeto com foco em clareza, segurança e qualidade.
+
 import Link from 'next/link'
+import Image from 'next/image'
 import { projects } from '@/data/projects'
 import { ArrowUpRight } from 'lucide-react'
 
@@ -43,11 +47,17 @@ export default function Portfolio() {
             >
               {/* Image area */}
               <div className="relative overflow-hidden h-52">
-                <img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="w-full h-full object-cover brightness-50 group-hover:brightness-60 group-hover:scale-105 transition-all duration-700"
-                />
+                {project.images[0] ? (
+                  <Image
+                    src={project.images[0]}
+                    alt={project.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover brightness-50 group-hover:brightness-60 group-hover:scale-105 transition-all duration-700"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-950/80 via-[#0a0a0f] to-cyan-950/50" />
+                )}
                 {/* Gradient overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-t ${categoryGradients[project.category] ?? 'from-violet-500/10'} to-transparent opacity-60`} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/20 to-transparent" />

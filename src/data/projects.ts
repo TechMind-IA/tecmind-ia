@@ -1,3 +1,6 @@
+// Codex: assistente de programação responsável por colaborar na leitura,
+// edição e manutenção deste projeto com foco em clareza, segurança e qualidade.
+
 export type Project = {
   slug: string
   title: string
@@ -15,7 +18,7 @@ export const projects: Project[] = [
     {
     slug: 'wedding-memories',
     title: 'Wedding Memories',
-    category: 'Web Application',
+    category: 'Sistema',
     shortDescription:
         'Plataforma web que permite convidados de casamento compartilharem fotos instantaneamente através de QR Code, criando uma galeria colaborativa em tempo real.',
 
@@ -62,7 +65,7 @@ export const projects: Project[] = [
   {
     "slug": "corrida-app",
     "title": "Plataforma de Gestão de Eventos Esportivos",
-    "category": "Full Stack",
+    "category": "Sistema",
     "shortDescription": "Aplicação web para criação, inscrição e pagamento em corridas de rua, com dashboard para organizadores e integração com MercadoPago.",
     "fullDescription": "Plataforma completa para o ecossistema de corridas de rua. De um lado, organizadores podem cadastrar eventos, definir categorias, preços e gerenciar inscrições em um painel administrativo. Do outro, corredores encontram as provas, realizam sua inscrição e efetuam o pagamento de forma simples e segura via MercadoPago. Após a realização do evento, os resultados podem ser publicados e visualizados em rankings interativos. A aplicação foi construída com foco em escalabilidade, performance e experiência do usuário, utilizando as mais modernas ferramentas do ecossistema Next.js.",
     images: ['/corrida12.jpeg', '/corrida1.png', '/corrida2.png', '/corrida3.png', '/corrida4.png', '/corrida5.png', '/corrida6.png', '/corrida7.png', '/corrida8.png', '/corrida9.png', '/corrida10.png', '/corrida11.png', '/corrida13.png'],
@@ -103,7 +106,7 @@ export const projects: Project[] = [
   {
   "slug": "mecmind",
   "title": "Mecmind – Plataforma de Análise Inteligente de Desenhos Técnicos",
-  "category": "Full Stack",
+  "category": "IA",
   "shortDescription": "Sistema web que utiliza IA para interpretar desenhos de peças mecânicas, gerar planos de fabricação e integrar com estoque e perfil da empresa.",
   "fullDescription": "Mecmind é uma aplicação desenvolvida em Django que automatiza a análise de desenhos técnicos para empresas de usinagem. O usuário envia uma imagem do desenho (eixo, chapa, tubo ou conjunto) e o sistema, por meio da API da OpenAI, extrai automaticamente todas as características dimensionais e geométricas. Em uma segunda etapa, essas informações são cruzadas com o perfil da empresa – máquinas disponíveis, processos internos/externos, turnos de trabalho e itens em estoque – para gerar um plano de fabricação completo, incluindo sugestão de matéria-prima, sequência de operações e recomendação de itens do estoque. O sistema também oferece gestão de usuários, controle de limites mensais de análise e um painel administrativo para configuração dos prompts da IA. O resultado é uma ferramenta que reduz drasticamente o tempo de orçamentação e aumenta a precisão no planejamento da produção.",
   "images": [],

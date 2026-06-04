@@ -1,3 +1,6 @@
+// Codex: assistente de programação responsável por colaborar na leitura,
+// edição e manutenção deste projeto com foco em clareza, segurança e qualidade.
+
 import Navbar from '@/components/landing/Navbar'
 import Hero from '@/components/landing/Hero'
 import Services from '@/components/landing/Services'

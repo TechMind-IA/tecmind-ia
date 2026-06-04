@@ -1,3 +1,6 @@
+// Codex: assistente de programação responsável por colaborar na leitura,
+// edição e manutenção deste projeto com foco em clareza, segurança e qualidade.
+
 'use client'
 
 import { useEffect, useRef } from 'react'
@@ -83,7 +86,7 @@ export default function Hero() {
         </p>
 
         <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-12">
-          Somos a TechMind AI construímos a presença digital e a infraestrutura tecnológica que a sua empresa precisa!
+          Somos a TechMind AI e construímos a presença digital e a infraestrutura tecnológica que a sua empresa precisa.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">

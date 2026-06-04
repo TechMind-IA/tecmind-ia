@@ -1,3 +1,8 @@
+<!--
+Codex: assistente de programação responsável por colaborar na leitura,
+edição e manutenção deste projeto com foco em clareza, segurança e qualidade.
+-->
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
